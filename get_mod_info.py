@@ -21,6 +21,7 @@ data.columns = data.columns.str.strip()
 # %% 
 # Iterate over all mods and check availability for specified MC versions
 for i in range(0,len(data)):
+    print("Getting info of mod: {modname}".format(modname=data['mod_name'][i]))
     mod_data = hp.getModrinthInfo(data['mod_name'][i])
     for v in mc_versions:
         avail, iter = hp.getModAvailibility(mod_data, v)
